@@ -4,7 +4,8 @@ import React from "react";
 const MunroSelector = ({munros, onMunroSelected} => {
     
     const handleChange = function(event){
-        onMunroSelected(munros[event.target.value]);
+        const chosenMunro = munros[event.target.value];
+        onMunroSelected(chosenMunro);
     }
 
     const munroOptions = munros.map((munro, index) => {
@@ -12,7 +13,8 @@ const MunroSelector = ({munros, onMunroSelected} => {
     })
 
     return(
-        <select onChange={handleChange}>
+        <select defaultValue="" onChange={handleChange}>
+            <option value="" selected>Choose a Munro..</option>
             {munroOptions}
         </select>
     )
