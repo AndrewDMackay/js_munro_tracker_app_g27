@@ -1,7 +1,7 @@
 
 import React from "react";
 
-const MunroSelector = ({munros, onMunroSelected} => {
+const MunroSelector = ({munros, onMunroSelected}) => {
     
     const handleChange = function(event){
         const chosenMunro = munros[event.target.value];

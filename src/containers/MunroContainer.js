@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import MunroList from '../components/MunroList';
 import MunroDetail from '../components/MunroDetail';
+import MunroSelector from '../components/MunroSelector';
 import './MunroContainer.css';
 
 const MunroContainer = () => {
@@ -18,14 +19,14 @@ const MunroContainer = () => {
         .then(munros => setMunros(munros))
     }
 
-    const onMunroClick = function(munro){
+    const onMunroSelected = function(munro){
         console.log(munro);
         setSelectedMunro(munro);
     }
 
     return (
         <div className="main-container">
-            <MunroList munros={munros} onMunroClick={onMunroClick}/>
+            <MunroSelector munros={munros} onMunroSelected={onMunroSelected}/>
             {selectedMunro ?<MunroDetail munro={selectedMunro}/> : null}
         </div>
     )
