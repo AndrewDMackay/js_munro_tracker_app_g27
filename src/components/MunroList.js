@@ -1,10 +1,11 @@
+
 import React from 'react';
 import ListItem from './ListItem';
 
-const MunroList = ({munros}) => {
+const MunroList = ({munros, onMunroClick}) => {
 
     const munrosItems = munros.map((munro, index) => {
-      return <ListItem munro={munro} key={index} />
+      return <ListItem munro={munro} key={index} onMunroClick={onMunroClick}/>
     })
 
   return (
@@ -17,3 +18,4 @@ const MunroList = ({munros}) => {
 }
 
 export default MunroList;
+
